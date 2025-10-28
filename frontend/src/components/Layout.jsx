@@ -97,7 +97,7 @@ const Layout = ({ children }) => {
                 <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-gray-200">
                   {user?.avatarUrl ? (
                     <img
-                      src={`http://localhost:5000${user.avatarUrl}`}
+                      src={`https://enterprise-task-project-management-portal-2329.onrender.com${user.avatarUrl}`}
                       alt={user?.name}
                       className="w-full h-full object-cover"
                     />

@@ -281,7 +281,7 @@ const Chat = () => {
                         <div className="w-8 h-8 rounded-full flex items-center justify-center mr-2 mt-1 flex-shrink-0 overflow-hidden bg-gray-200">
                           {message.senderAvatar ? (
                             <img
-                              src={`http://localhost:5000${message.senderAvatar}`}
+                              src={`https://enterprise-task-project-management-portal-2329.onrender.com${message.senderAvatar}`}
                               alt={message.senderName}
                               className="w-full h-full object-cover"
                             />
@@ -296,7 +296,7 @@ const Chat = () => {
                         <div className="w-8 h-8 rounded-full flex items-center justify-center ml-2 mt-1 flex-shrink-0 overflow-hidden bg-gray-200 order-2">
                           {user.avatarUrl ? (
                             <img
-                              src={`http://localhost:5000${user.avatarUrl}`}
+                              src={`https://enterprise-task-project-management-portal-2329.onrender.com${user.avatarUrl}`}
                               alt={user.name}
                               className="w-full h-full object-cover"
                             />
