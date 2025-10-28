@@ -33,7 +33,7 @@ const ProfilePictureUpload = ({ currentAvatar, onAvatarUpdate }) => {
       formData.append('profilePicture', file);
 
       const token = localStorage.getItem('token');
-      const response = await axios.post('http://localhost:5000/api/auth/upload-profile-picture', formData, {
+      const response = await axios.post('https://enterprise-task-project-management-portal-2329.onrender.com/api/auth/upload-profile-picture', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${token}`
@@ -65,7 +65,7 @@ const ProfilePictureUpload = ({ currentAvatar, onAvatarUpdate }) => {
         >
           {currentAvatar ? (
             <img
-              src={`http://localhost:5000${currentAvatar}`}
+              src={`https://enterprise-task-project-management-portal-2329.onrender.com${currentAvatar}`}
               alt="Profile"
               className="w-full h-full object-cover"
             />
