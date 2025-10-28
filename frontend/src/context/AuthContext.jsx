@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
       // Verify token and get user data
       const verifyToken = async () => {
         try {
-          const res = await axios.get('http://localhost:5000/api/auth/me');
+          const res = await axios.get('https://enterprise-task-project-management-portal-2329.onrender.com/api/auth/me');
           setUser(res.data);
         } catch (err) {
           localStorage.removeItem('token');
@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
   }, [token]);
 
   const login = async (email, password) => {
-    const res = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+    const res = await axios.post('https://enterprise-task-project-management-portal-2329.onrender.com/api/auth/login', { email, password });
     const { token: newToken, user: userData } = res.data;
     localStorage.setItem('token', newToken);
     setToken(newToken);
@@ -43,7 +43,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (name, email, password, role) => {
-    const res = await axios.post('http://localhost:5000/api/auth/register', { name, email, password, role });
+    const res = await axios.post('https://enterprise-task-project-management-portal-2329.onrender.com/api/auth/register', { name, email, password, role });
     const { token: newToken, user: userData } = res.data;
     localStorage.setItem('token', newToken);
     setToken(newToken);

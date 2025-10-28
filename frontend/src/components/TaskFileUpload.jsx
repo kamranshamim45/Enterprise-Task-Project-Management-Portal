@@ -37,7 +37,7 @@ const TaskFileUpload = ({ taskId, onUploadComplete, onClose }) => {
       });
 
       const token = localStorage.getItem('token');
-      const response = await axios.post(`http://localhost:5000/api/tasks/${taskId}/upload`, formData, {
+      const response = await axios.post(`https://enterprise-task-project-management-portal-2329.onrender.com/api/tasks/${taskId}/upload`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${token}`

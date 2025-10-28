@@ -7,7 +7,7 @@ const { title, description, assignees, priority, status, deadline, project } = r
 const task = await Task.create({ title, description, project, assignees, priority, status, deadline, createdBy: req.user._id });
 
 // Add assignees to project members if not already present
-const Project = (await import('../models/project.js')).default;
+const Project = (await import('../models/Project.js')).default;
 await Project.findByIdAndUpdate(project, {
   $addToSet: { members: { $each: assignees } }
 });

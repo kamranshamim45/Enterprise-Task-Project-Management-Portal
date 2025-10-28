@@ -25,10 +25,10 @@ const Projects = () => {
     try {
       const token = localStorage.getItem('token');
       const [projectsRes, usersRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/projects', {
+        axios.get('https://enterprise-task-project-management-portal-2329.onrender.com/api/projects', {
           headers: { Authorization: `Bearer ${token}` }
         }),
-        axios.get('http://localhost:5000/api/auth/users', {
+        axios.get('https://enterprise-task-project-management-portal-2329.onrender.com/api/auth/users', {
           headers: { Authorization: `Bearer ${token}` }
         })
       ]);
@@ -49,11 +49,11 @@ const Projects = () => {
     try {
       const token = localStorage.getItem('token');
       if (editingProject) {
-        await axios.put(`http://localhost:5000/api/projects/${editingProject._id}`, formData, {
+        await axios.put(`https://enterprise-task-project-management-portal-2329.onrender.com/api/projects/${editingProject._id}`, formData, {
           headers: { Authorization: `Bearer ${token}` }
         });
       } else {
-        await axios.post('http://localhost:5000/api/projects', formData, {
+        await axios.post('https://enterprise-task-project-management-portal-2329.onrender.com/api/projects', formData, {
           headers: { Authorization: `Bearer ${token}` }
         });
       }
@@ -82,9 +82,9 @@ const Projects = () => {
     if (window.confirm('Are you sure you want to delete this project?')) {
       try {
         const token = localStorage.getItem('token');
-        await axios.delete(`http://localhost:5000/api/projects/${projectId}`, {
-          headers: { Authorization: `Bearer ${token}` }
-        });
+      await axios.delete(`https://enterprise-task-project-management-portal-2329.onrender.com/api/projects/${projectId}`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
         fetchProjects();
       } catch (err) {
         setError('Failed to delete project');

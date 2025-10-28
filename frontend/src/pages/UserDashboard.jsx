@@ -76,10 +76,10 @@ const UserDashboard = () => {
     try {
       const token = localStorage.getItem('token');
       const [tasksRes, projectsRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/tasks', {
+        axios.get('https://enterprise-task-project-management-portal-2329.onrender.com/api/tasks', {
           headers: { Authorization: `Bearer ${token}` }
         }),
-        axios.get('http://localhost:5000/api/projects', {
+        axios.get('https://enterprise-task-project-management-portal-2329.onrender.com/api/projects', {
           headers: { Authorization: `Bearer ${token}` }
         })
       ]);

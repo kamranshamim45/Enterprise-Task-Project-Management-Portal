@@ -31,9 +31,9 @@ const AdminDashboard = () => {
   const fetchAdminDashboardData = async () => {
     try {
       const [projectsRes, tasksRes, usersRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/projects'),
-        axios.get('http://localhost:5000/api/tasks'),
-        axios.get('http://localhost:5000/api/auth/users') // Assuming admin endpoint for users
+        axios.get('https://enterprise-task-project-management-portal-2329.onrender.com/api/projects'),
+        axios.get('https://enterprise-task-project-management-portal-2329.onrender.com/api/tasks'),
+        axios.get('https://enterprise-task-project-management-portal-2329.onrender.com/api/auth/users') // Assuming admin endpoint for users
       ]);
 
       const projects = projectsRes.data;
@@ -105,16 +105,16 @@ const AdminDashboard = () => {
     setSelectedTask(task);
   };
 
-  const handleDownloadFile = (filePath) => {
-    const link = document.createElement('a');
-    link.href = `http://localhost:5000${filePath}`;
-    link.download = filePath.split('/').pop();
-    link.click();
-  };
+    const handleDownloadFile = (filePath) => {
+      const link = document.createElement('a');
+      link.href = `https://enterprise-task-project-management-portal-2329.onrender.com${filePath}`;
+      link.download = filePath.split('/').pop();
+      link.click();
+    };
 
-  const handleViewFile = (filePath) => {
-    window.open(`http://localhost:5000${filePath}`, '_blank');
-  };
+    const handleViewFile = (filePath) => {
+      window.open(`https://enterprise-task-project-management-portal-2329.onrender.com${filePath}`, '_blank');
+    };
 
   const StatCard = ({ title, value, icon, color, bgColor }) => (
     <div className={`bg-gradient-to-br ${bgColor} p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105`}>

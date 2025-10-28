@@ -17,7 +17,7 @@ const Chat = () => {
 
   useEffect(() => {
     // Initialize socket connection
-    const newSocket = io('http://localhost:5000', {
+    const newSocket = io('https://enterprise-task-project-management-portal-2329.onrender.com', {
       auth: {
         token: localStorage.getItem('token')
       }
@@ -74,7 +74,7 @@ const Chat = () => {
 
   const fetchProjects = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/projects');
+      const res = await axios.get('https://enterprise-task-project-management-portal-2329.onrender.com/api/projects');
       setProjects(res.data);
       if (res.data.length > 0) {
         setSelectedProject(res.data[0]._id);
@@ -88,7 +88,7 @@ const Chat = () => {
 
   const fetchMessages = async (projectId) => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/messages/${projectId}`);
+      const res = await axios.get(`https://enterprise-task-project-management-portal-2329.onrender.com/api/messages/${projectId}`);
       const formattedMessages = res.data.map(msg => ({
         _id: msg._id,
         content: msg.text,

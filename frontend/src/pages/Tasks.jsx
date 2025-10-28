@@ -34,13 +34,13 @@ const Tasks = () => {
     try {
       const token = localStorage.getItem('token');
       const [tasksRes, projectsRes, usersRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/tasks', {
+        axios.get('https://enterprise-task-project-management-portal-2329.onrender.com/api/tasks', {
           headers: { Authorization: `Bearer ${token}` }
         }),
-        axios.get('http://localhost:5000/api/projects', {
+        axios.get('https://enterprise-task-project-management-portal-2329.onrender.com/api/projects', {
           headers: { Authorization: `Bearer ${token}` }
         }),
-        axios.get('http://localhost:5000/api/auth/users', {
+        axios.get('https://enterprise-task-project-management-portal-2329.onrender.com/api/auth/users', {
           headers: { Authorization: `Bearer ${token}` }
         })
       ]);
@@ -72,11 +72,11 @@ const Tasks = () => {
       };
 
       if (editingTask) {
-        await axios.put(`http://localhost:5000/api/tasks/${editingTask._id}`, submitData, {
+        await axios.put(`https://enterprise-task-project-management-portal-2329.onrender.com/api/tasks/${editingTask._id}`, submitData, {
           headers: { Authorization: `Bearer ${token}` }
         });
       } else {
-        await axios.post('http://localhost:5000/api/tasks', submitData, {
+        await axios.post('https://enterprise-task-project-management-portal-2329.onrender.com/api/tasks', submitData, {
           headers: { Authorization: `Bearer ${token}` }
         });
       }
@@ -107,7 +107,7 @@ const Tasks = () => {
     if (window.confirm('Are you sure you want to delete this task?')) {
       try {
         const token = localStorage.getItem('token');
-        await axios.delete(`http://localhost:5000/api/tasks/${taskId}`, {
+        await axios.delete(`https://enterprise-task-project-management-portal-2329.onrender.com/api/tasks/${taskId}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         fetchData();
@@ -120,7 +120,7 @@ const Tasks = () => {
   const handleStatusChange = async (taskId, newStatus) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:5000/api/tasks/${taskId}`, { status: newStatus }, {
+      await axios.put(`https://enterprise-task-project-management-portal-2329.onrender.com/api/tasks/${taskId}`, { status: newStatus }, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
