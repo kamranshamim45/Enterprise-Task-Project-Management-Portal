@@ -1,4 +1,4 @@
-import Project from '../models/project.js';
+import Project from '../models/Project.js';
 import User from '../models/User.js';
 
 
